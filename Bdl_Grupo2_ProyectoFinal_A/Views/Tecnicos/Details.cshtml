@@ -1,0 +1,107 @@
+﻿@model Bdl_Grupo2_ProyectoFinal_A.Tecnicos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tecnicos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DPI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DPI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Nombre1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Nombre1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Nombre2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Nombre2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Nombre3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Nombre3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Apellido1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Apellido1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Apellido2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Apellido2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Apellido3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Apellido3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_TlfPersonal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_TlfPersonal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tec_TlfCasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tec_TlfCasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Perfiles.Prf_Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Perfiles.Prf_Tipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Tec_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

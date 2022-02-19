@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Bdl_ProyectoFinal_AModelStoreContainer" CdmEntityContainer="Bdl_ProyectoFinal_AEntities">
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="Dpt_Id" ColumnName="Dpt_Id" />
+          <ScalarProperty Name="Dpt_Tipo" ColumnName="Dpt_Tipo" />
+          <ScalarProperty Name="Dpt_Nivel" ColumnName="Dpt_Nivel" />
+          <ScalarProperty Name="Dpt_CantidadComputo" ColumnName="Dpt_CantidadComputo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipos">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Equipos">
+        <MappingFragment StoreEntitySet="Equipos">
+          <ScalarProperty Name="Eqs_Id" ColumnName="Eqs_Id" />
+          <ScalarProperty Name="Eqs_Codigo" ColumnName="Eqs_Codigo" />
+          <ScalarProperty Name="Hdw_Id" ColumnName="Hdw_Id" />
+          <ScalarProperty Name="Sfw_Id" ColumnName="Sfw_Id" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado_Ticket">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Estado_Ticket">
+        <MappingFragment StoreEntitySet="Estado_Ticket">
+          <ScalarProperty Name="EstdTick_Id" ColumnName="EstdTick_Id" />
+          <ScalarProperty Name="EstdTick_Tipo" ColumnName="EstdTick_Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fabricante">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Fabricante">
+        <MappingFragment StoreEntitySet="Fabricante">
+          <ScalarProperty Name="Fabric_Id" ColumnName="Fabric_Id" />
+          <ScalarProperty Name="Fabric_Nombre" ColumnName="Fabric_Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hardware">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Hardware">
+        <MappingFragment StoreEntitySet="Hardware">
+          <ScalarProperty Name="Hdw_Id" ColumnName="Hdw_Id" />
+          <ScalarProperty Name="Hdw_Modelo" ColumnName="Hdw_Modelo" />
+          <ScalarProperty Name="Hdw_Serie" ColumnName="Hdw_Serie" />
+          <ScalarProperty Name="Fabric_Id" ColumnName="Fabric_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Perfiles">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="Prf_Id" ColumnName="Prf_Id" />
+          <ScalarProperty Name="Prf_Tipo" ColumnName="Prf_Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Problemas_Tecnicos">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Problemas_Tecnicos">
+        <MappingFragment StoreEntitySet="Problemas_Tecnicos">
+          <ScalarProperty Name="PrbTc_Id" ColumnName="PrbTc_Id" />
+          <ScalarProperty Name="Prb_Descripcion" ColumnName="Prb_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recordatorios">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Recordatorios">
+        <MappingFragment StoreEntitySet="Recordatorios">
+          <ScalarProperty Name="Rcdt_Id" ColumnName="Rcdt_Id" />
+          <ScalarProperty Name="Rcdt_Descripcion" ColumnName="Rcdt_Descripcion" />
+          <ScalarProperty Name="Tkt_Id" ColumnName="Tkt_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Software">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Software">
+        <MappingFragment StoreEntitySet="Software">
+          <ScalarProperty Name="Sfw_Id" ColumnName="Sfw_Id" />
+          <ScalarProperty Name="Sfw_Nombre" ColumnName="Sfw_Nombre" />
+          <ScalarProperty Name="Fabric_Id" ColumnName="Fabric_Id" />
+          <ScalarProperty Name="TpStw_Id" ColumnName="TpStw_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tecnicos">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Tecnicos">
+        <MappingFragment StoreEntitySet="Tecnicos">
+          <ScalarProperty Name="Tec_Id" ColumnName="Tec_Id" />
+          <ScalarProperty Name="DPI" ColumnName="DPI" />
+          <ScalarProperty Name="Tec_Nombre1" ColumnName="Tec_Nombre1" />
+          <ScalarProperty Name="Tec_Nombre2" ColumnName="Tec_Nombre2" />
+          <ScalarProperty Name="Tec_Nombre3" ColumnName="Tec_Nombre3" />
+          <ScalarProperty Name="Tec_Apellido1" ColumnName="Tec_Apellido1" />
+          <ScalarProperty Name="Tec_Apellido2" ColumnName="Tec_Apellido2" />
+          <ScalarProperty Name="Tec_Apellido3" ColumnName="Tec_Apellido3" />
+          <ScalarProperty Name="Tec_Direccion" ColumnName="Tec_Direccion" />
+          <ScalarProperty Name="Tec_TlfPersonal" ColumnName="Tec_TlfPersonal" />
+          <ScalarProperty Name="Tec_TlfCasa" ColumnName="Tec_TlfCasa" />
+          <ScalarProperty Name="Prf_Id" ColumnName="Prf_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket_Prioridad">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Ticket_Prioridad">
+        <MappingFragment StoreEntitySet="Ticket_Prioridad">
+          <ScalarProperty Name="TktPrd_Id" ColumnName="TktPrd_Id" />
+          <ScalarProperty Name="TktPrd_Tipo" ColumnName="TktPrd_Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Tickets">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="Tkt_Id" ColumnName="Tkt_Id" />
+          <ScalarProperty Name="Tkt_Codigo" ColumnName="Tkt_Codigo" />
+          <ScalarProperty Name="Tec_Id" ColumnName="Tec_Id" />
+          <ScalarProperty Name="TktPrd_Id" ColumnName="TktPrd_Id" />
+          <ScalarProperty Name="PrbTc_Id" ColumnName="PrbTc_Id" />
+          <ScalarProperty Name="EstdTick_Id" ColumnName="EstdTick_Id" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+          <ScalarProperty Name="Tkt_Descripcion" ColumnName="Tkt_Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Software">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Tipo_Software">
+        <MappingFragment StoreEntitySet="Tipo_Software">
+          <ScalarProperty Name="TpStw_Id" ColumnName="TpStw_Id" />
+          <ScalarProperty Name="TpStw_Tipo" ColumnName="TpStw_Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubicacion_Usuarios">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Ubicacion_Usuarios">
+        <MappingFragment StoreEntitySet="Ubicacion_Usuarios">
+          <ScalarProperty Name="UbcUsr_Id" ColumnName="UbcUsr_Id" />
+          <ScalarProperty Name="UbcUsr_Longitud" ColumnName="UbcUsr_Longitud" />
+          <ScalarProperty Name="UbcUsr_Latitud" ColumnName="UbcUsr_Latitud" />
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsrTecnicos">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.UsrTecnicos">
+        <MappingFragment StoreEntitySet="UsrTecnicos">
+          <ScalarProperty Name="UsrTecnico_Id" ColumnName="UsrTecnico_Id" />
+          <ScalarProperty Name="UsrTecnico_Correo" ColumnName="UsrTecnico_Correo" />
+          <ScalarProperty Name="UsrTecnico_Password" ColumnName="UsrTecnico_Password" />
+          <ScalarProperty Name="Tec_Id" ColumnName="Tec_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="Bdl_ProyectoFinal_AModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Usr_Id" ColumnName="Usr_Id" />
+          <ScalarProperty Name="Usr_CodigoUsuario" ColumnName="Usr_CodigoUsuario" />
+          <ScalarProperty Name="Usr_NombreUsuario" ColumnName="Usr_NombreUsuario" />
+          <ScalarProperty Name="Usr_Correo" ColumnName="Usr_Correo" />
+          <ScalarProperty Name="Usr_Password" ColumnName="Usr_Password" />
+          <ScalarProperty Name="Dpt_Id" ColumnName="Dpt_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

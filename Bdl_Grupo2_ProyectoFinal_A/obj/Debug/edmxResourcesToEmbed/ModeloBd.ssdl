@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DevSolutionsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="Dpt_Id" />
+    </Key>
+    <Property Name="Dpt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dpt_Tipo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Dpt_Nivel" Type="int" Nullable="false" />
+    <Property Name="Dpt_CantidadComputo" Type="int" />
+  </EntityType>
+  <EntityType Name="Equipos">
+    <Key>
+      <PropertyRef Name="Eqs_Id" />
+    </Key>
+    <Property Name="Eqs_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eqs_Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Hdw_Id" Type="int" />
+    <Property Name="Sfw_Id" Type="int" />
+    <Property Name="Usr_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Estado_Ticket">
+    <Key>
+      <PropertyRef Name="EstdTick_Id" />
+    </Key>
+    <Property Name="EstdTick_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstdTick_Tipo" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fabricante">
+    <Key>
+      <PropertyRef Name="Fabric_Id" />
+    </Key>
+    <Property Name="Fabric_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fabric_Nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hardware">
+    <Key>
+      <PropertyRef Name="Hdw_Id" />
+    </Key>
+    <Property Name="Hdw_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hdw_Modelo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Hdw_Serie" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Fabric_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Perfiles">
+    <Key>
+      <PropertyRef Name="Prf_Id" />
+    </Key>
+    <Property Name="Prf_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prf_Tipo" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Problemas_Tecnicos">
+    <Key>
+      <PropertyRef Name="PrbTc_Id" />
+    </Key>
+    <Property Name="PrbTc_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prb_Descripcion" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recordatorios">
+    <Key>
+      <PropertyRef Name="Rcdt_Id" />
+    </Key>
+    <Property Name="Rcdt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rcdt_Descripcion" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Tkt_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Software">
+    <Key>
+      <PropertyRef Name="Sfw_Id" />
+    </Key>
+    <Property Name="Sfw_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sfw_Nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Fabric_Id" Type="int" />
+    <Property Name="TpStw_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Tecnicos">
+    <Key>
+      <PropertyRef Name="Tec_Id" />
+    </Key>
+    <Property Name="Tec_Id" Type="int" Nullable="false" />
+    <Property Name="DPI" Type="nvarchar" MaxLength="13" />
+    <Property Name="Tec_Nombre1" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Tec_Nombre2" Type="nvarchar" MaxLength="25" />
+    <Property Name="Tec_Nombre3" Type="nvarchar" MaxLength="25" />
+    <Property Name="Tec_Apellido1" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Tec_Apellido2" Type="nvarchar" MaxLength="25" />
+    <Property Name="Tec_Apellido3" Type="nvarchar" MaxLength="25" />
+    <Property Name="Tec_Direccion" Type="nvarchar" MaxLength="150" />
+    <Property Name="Tec_TlfPersonal" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Tec_TlfCasa" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Prf_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Ticket_Prioridad">
+    <Key>
+      <PropertyRef Name="TktPrd_Id" />
+    </Key>
+    <Property Name="TktPrd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TktPrd_Tipo" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tickets">
+    <Key>
+      <PropertyRef Name="Tkt_Id" />
+    </Key>
+    <Property Name="Tkt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tkt_Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Tec_Id" Type="int" />
+    <Property Name="TktPrd_Id" Type="int" />
+    <Property Name="PrbTc_Id" Type="int" />
+    <Property Name="EstdTick_Id" Type="int" />
+    <Property Name="Usr_Id" Type="int" />
+    <Property Name="Tkt_Descripcion" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Tipo_Software">
+    <Key>
+      <PropertyRef Name="TpStw_Id" />
+    </Key>
+    <Property Name="TpStw_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TpStw_Tipo" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ubicacion_Usuarios">
+    <Key>
+      <PropertyRef Name="UbcUsr_Id" />
+    </Key>
+    <Property Name="UbcUsr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UbcUsr_Longitud" Type="float" Nullable="false" />
+    <Property Name="UbcUsr_Latitud" Type="float" Nullable="false" />
+    <Property Name="Usr_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Usr_Id" />
+    </Key>
+    <Property Name="Usr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usr_CodigoUsuario" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Usr_NombreUsuario" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Usr_Correo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usr_Password" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Dpt_Id" Type="int" />
+  </EntityType>
+  <Association Name="RefDepartamentos1">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Dpt_Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="Dpt_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEstado_Ticket19">
+    <End Role="Estado_Ticket" Type="Self.Estado_Ticket" Multiplicity="0..1" />
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Ticket">
+        <PropertyRef Name="EstdTick_Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="EstdTick_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefFabricante6">
+    <End Role="Fabricante" Type="Self.Fabricante" Multiplicity="0..1" />
+    <End Role="Software" Type="Self.Software" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fabricante">
+        <PropertyRef Name="Fabric_Id" />
+      </Principal>
+      <Dependent Role="Software">
+        <PropertyRef Name="Fabric_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefFabricante7">
+    <End Role="Fabricante" Type="Self.Fabricante" Multiplicity="0..1" />
+    <End Role="Hardware" Type="Self.Hardware" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fabricante">
+        <PropertyRef Name="Fabric_Id" />
+      </Principal>
+      <Dependent Role="Hardware">
+        <PropertyRef Name="Fabric_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefHardware22">
+    <End Role="Hardware" Type="Self.Hardware" Multiplicity="0..1" />
+    <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hardware">
+        <PropertyRef Name="Hdw_Id" />
+      </Principal>
+      <Dependent Role="Equipos">
+        <PropertyRef Name="Hdw_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPerfiles14">
+    <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="0..1" />
+    <End Role="Tecnicos" Type="Self.Tecnicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfiles">
+        <PropertyRef Name="Prf_Id" />
+      </Principal>
+      <Dependent Role="Tecnicos">
+        <PropertyRef Name="Prf_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProblemas_Tecnicos16">
+    <End Role="Problemas_Tecnicos" Type="Self.Problemas_Tecnicos" Multiplicity="0..1" />
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problemas_Tecnicos">
+        <PropertyRef Name="PrbTc_Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="PrbTc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefSoftware23">
+    <End Role="Software" Type="Self.Software" Multiplicity="0..1" />
+    <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Software">
+        <PropertyRef Name="Sfw_Id" />
+      </Principal>
+      <Dependent Role="Equipos">
+        <PropertyRef Name="Sfw_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTecnicos12">
+    <End Role="Tecnicos" Type="Self.Tecnicos" Multiplicity="0..1" />
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tecnicos">
+        <PropertyRef Name="Tec_Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="Tec_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTicket_Prioridad15">
+    <End Role="Ticket_Prioridad" Type="Self.Ticket_Prioridad" Multiplicity="0..1" />
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket_Prioridad">
+        <PropertyRef Name="TktPrd_Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="TktPrd_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTickets18">
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="0..1" />
+    <End Role="Recordatorios" Type="Self.Recordatorios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tickets">
+        <PropertyRef Name="Tkt_Id" />
+      </Principal>
+      <Dependent Role="Recordatorios">
+        <PropertyRef Name="Tkt_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTipo_Software17">
+    <End Role="Tipo_Software" Type="Self.Tipo_Software" Multiplicity="0..1" />
+    <End Role="Software" Type="Self.Software" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Software">
+        <PropertyRef Name="TpStw_Id" />
+      </Principal>
+      <Dependent Role="Software">
+        <PropertyRef Name="TpStw_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefUsuarios20">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Usr_Id" />
+      </Principal>
+      <Dependent Role="Tickets">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefUsuarios25">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Usr_Id" />
+      </Principal>
+      <Dependent Role="Equipos">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefUsuarios8">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Ubicacion_Usuarios" Type="Self.Ubicacion_Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Usr_Id" />
+      </Principal>
+      <Dependent Role="Ubicacion_Usuarios">
+        <PropertyRef Name="Usr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DevSolutionsModelStoreContainer">
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado_Ticket" EntityType="Self.Estado_Ticket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fabricante" EntityType="Self.Fabricante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hardware" EntityType="Self.Hardware" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Problemas_Tecnicos" EntityType="Self.Problemas_Tecnicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recordatorios" EntityType="Self.Recordatorios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Software" EntityType="Self.Software" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tecnicos" EntityType="Self.Tecnicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ticket_Prioridad" EntityType="Self.Ticket_Prioridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipo_Software" EntityType="Self.Tipo_Software" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubicacion_Usuarios" EntityType="Self.Ubicacion_Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="RefDepartamentos1" Association="Self.RefDepartamentos1">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="RefEstado_Ticket19" Association="Self.RefEstado_Ticket19">
+      <End Role="Estado_Ticket" EntitySet="Estado_Ticket" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="RefFabricante6" Association="Self.RefFabricante6">
+      <End Role="Fabricante" EntitySet="Fabricante" />
+      <End Role="Software" EntitySet="Software" />
+    </AssociationSet>
+    <AssociationSet Name="RefFabricante7" Association="Self.RefFabricante7">
+      <End Role="Fabricante" EntitySet="Fabricante" />
+      <End Role="Hardware" EntitySet="Hardware" />
+    </AssociationSet>
+    <AssociationSet Name="RefHardware22" Association="Self.RefHardware22">
+      <End Role="Hardware" EntitySet="Hardware" />
+      <End Role="Equipos" EntitySet="Equipos" />
+    </AssociationSet>
+    <AssociationSet Name="RefPerfiles14" Association="Self.RefPerfiles14">
+      <End Role="Perfiles" EntitySet="Perfiles" />
+      <End Role="Tecnicos" EntitySet="Tecnicos" />
+    </AssociationSet>
+    <AssociationSet Name="RefProblemas_Tecnicos16" Association="Self.RefProblemas_Tecnicos16">
+      <End Role="Problemas_Tecnicos" EntitySet="Problemas_Tecnicos" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="RefSoftware23" Association="Self.RefSoftware23">
+      <End Role="Software" EntitySet="Software" />
+      <End Role="Equipos" EntitySet="Equipos" />
+    </AssociationSet>
+    <AssociationSet Name="RefTecnicos12" Association="Self.RefTecnicos12">
+      <End Role="Tecnicos" EntitySet="Tecnicos" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="RefTicket_Prioridad15" Association="Self.RefTicket_Prioridad15">
+      <End Role="Ticket_Prioridad" EntitySet="Ticket_Prioridad" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="RefTickets18" Association="Self.RefTickets18">
+      <End Role="Tickets" EntitySet="Tickets" />
+      <End Role="Recordatorios" EntitySet="Recordatorios" />
+    </AssociationSet>
+    <AssociationSet Name="RefTipo_Software17" Association="Self.RefTipo_Software17">
+      <End Role="Tipo_Software" EntitySet="Tipo_Software" />
+      <End Role="Software" EntitySet="Software" />
+    </AssociationSet>
+    <AssociationSet Name="RefUsuarios20" Association="Self.RefUsuarios20">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Tickets" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="RefUsuarios25" Association="Self.RefUsuarios25">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Equipos" EntitySet="Equipos" />
+    </AssociationSet>
+    <AssociationSet Name="RefUsuarios8" Association="Self.RefUsuarios8">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Ubicacion_Usuarios" EntitySet="Ubicacion_Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

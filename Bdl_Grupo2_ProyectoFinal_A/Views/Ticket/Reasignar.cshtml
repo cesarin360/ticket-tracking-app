@@ -1,0 +1,83 @@
+﻿@model Bdl_Grupo2_ProyectoFinal_A.Tickets
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container animate__animated animate__fadeIn w3_" style="margin-bottom: 50px;">
+    <div class="container">
+        <h2 style="margin-top: 110px;">Reasignar Ticket</h2>
+        <div>
+            <hr />
+            <div style="overflow-y: scroll; max-height: 250px; width: 700px;  margin-top: 65px;">
+                <h5 class="card-title" style="position: absolute; top: 180px;"><b style="color: #888888;">Información</b></h5>
+                <div style="left: 50px; color: #575757;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Código Ticket: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Tkt_Codigo</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Descripción: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Tkt_Descripcion</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px; top: 290px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Estado del Ticket: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Estado_Ticket.EstdTick_Tipo</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px; top: 290px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Problema Técnico: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Problemas_Tecnicos.Prb_Descripcion</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px; top: 290px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Técnico encargado: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Tecnicos.Tec_Nombre1 @Model.Tecnicos.Tec_Nombre2 - @Model.Tecnicos.DPI</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px; top: 290px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Prioridad: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Ticket_Prioridad.TktPrd_Tipo</b></h5>
+                    <hr />
+                </div>
+                <div style="left: 50px; top: 290px;">
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;">Departamento usuario: </h5>
+                    <h5 class="card-title" style="display: inline-flex; color: #575757;"><b>@Model.Usuarios.Departamentos.Dpt_Tipo</b></h5>
+                    <hr />
+                </div>
+            </div>
+            
+
+                <div class="row" style="margin-top: 30px;">
+                    <div class="row g-3">
+                        <div class="col-sm">
+                            <form action="/Ticket/ReasignarAleatorio" method="post">
+                                <input type="text" name="Tec_Id" value="@Model.Tec_Id" hidden />
+                                <input type="text" name="id" value="@Model.Tkt_Id" hidden />
+                                <input type="submit" value="Reasignar aleatorio" class="btn btn-primary" />
+                            </form>
+                        </div>
+                        <div class="col-sm-10">
+                            <form action="/Ticket/Reasignar" method="post">
+                                <input type="text" name="id" value="@Model.Tkt_Id" hidden />
+                                <div class="row g-3">
+                                    <div class="col-sm-7">
+                                        <input type="text" name="DPI" placeholder="Documento de Identificación" class="form-control" required/>
+                                    </div>
+                                    <div class="col-sm">
+                                        <input type="submit" value="Reasignar" class="btn btn-light" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm">
+                            <a class="btn btn-light" href="~/Ticket/View_Ticket/@Model.Tkt_Id" style="position: relative;">
+                                Regresar
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+        </div>
+    </div>
+</div>

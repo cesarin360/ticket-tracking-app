@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Bdl_Grupo2_ProyectoFinal_A.Tecnicos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+<p>
+    @Html.ActionLink("Lista", "ListTickets")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DPI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Nombre1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Nombre2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Nombre3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Apellido2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Apellido3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_TlfPersonal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tec_TlfCasa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Perfiles.Prf_Tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DPI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Nombre1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Nombre2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Nombre3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Apellido1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Apellido2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Apellido3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_TlfPersonal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tec_TlfCasa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perfiles.Prf_Tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Tec_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Tec_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Tec_Id })
+        </td>
+    </tr>
+}
+
+</table>
